@@ -16,4 +16,7 @@ fun main() {
     }
 
     println("Grade kamu: $grade")
+
+    fun calculateScore(score: Int) = if (score <75) "Lulus" else "Tidak Lulus"
+    println("Status: ${calculateScore(score)}")
 }
