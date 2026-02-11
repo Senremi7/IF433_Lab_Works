@@ -3,7 +3,7 @@ package oop_140764_JeremiahEJ.week02
 import java.util.Scanner
 
 fun main() {
-    val scanner = Scanner( source = System.`in` )
+    val scanner = Scanner(System.`in` )
 
     println("--- APLIKASI PMB UMN ---")
 
@@ -21,7 +21,7 @@ fun main() {
         print("Masukkan Jurusan: ")
         val major = scanner.nextLine()
 
-        val sl = Student(name, nim, major)
+        val s1 = Student(name, nim, major)
         println("Status: Pendaftaran Selesai")
     }
 }
