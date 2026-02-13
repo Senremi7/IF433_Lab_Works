@@ -9,6 +9,7 @@ fun main() {
     println("1. PMB UMN")
     println("2. Library Fine System")
     println("3. Hero Battle Game")
+    println("0. Exit")
     print("Pilihan: ")
     val choice = scanner.nextInt()
     scanner.nextLine()
@@ -69,10 +70,10 @@ fun main() {
             val denda = Loan(title, peminjam, durasi)
 
             println("Detail Peminjaman")
-            println("Buku       :${denda.bookTitle}")
-            println("Peminjam   :${denda.borrower}")
-            println("Lama Pinjam:${denda.loanDuration} hari")
-            println("Total Denda: Rp${denda.calculateFine()}")
+            println("Buku        : ${denda.bookTitle}")
+            println("Peminjam    : ${denda.borrower}")
+            println("Lama Pinjam : ${denda.loanDuration} hari")
+            println("Total Denda : Rp${denda.calculateFine()}")
         }
         3 ->{
             println("--- HERO BATTLE GAME ---")
@@ -83,6 +84,12 @@ fun main() {
             print("Masukan Base Damage Hero: ")
             val baseDamage = scanner.nextInt()
             scanner.nextLine()
+
+            if (baseDamage <0) {
+                println("Bro... lu ngeheal musuh..")
+            } else if(baseDamage == 0) {
+                println("Mantap, semangat mukul angin bang")
+            }
 
             val hero = Hero(heroName, baseDamage)
 
@@ -129,6 +136,9 @@ fun main() {
                 println("$heroName berhasil kabur!")
                 println("Dasar penakut!")
             }
+        }
+        0 ->{
+            println("Exiting...")
         }
         else -> {
             println("Menu tidak valid")
