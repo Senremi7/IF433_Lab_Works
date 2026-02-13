@@ -8,8 +8,8 @@ fun main() {
     println("=== Aplikasi Jeremiahhh ===")
     println("1. PMB UMN")
     println("2. Library Fine System")
-    println("3. Exit")
-
+    println("3. Hero Battle Game")
+    print("Pilihan: ")
     val choice = scanner.nextInt()
     scanner.nextLine()
 
@@ -75,11 +75,63 @@ fun main() {
             println("Total Denda: Rp${denda.calculateFine()}")
         }
         3 ->{
-            println("Test")
+            println("--- HERO BATTLE GAME ---")
+
+            print("Masukkan Nama Hero: ")
+            val heroName = scanner.nextLine()
+
+            print("Masukan Base Damage Hero: ")
+            val baseDamage = scanner.nextInt()
+            scanner.nextLine()
+
+            val hero = Hero(heroName, baseDamage)
+
+            var enemyHp = 100
+
+            println("\nMusuh muncul dengan hp ${enemyHp}!")
+
+            while (hero.isAlive() && enemyHp > 0) {
+                println("\nApa yang harus kulakukan??")
+                println("1. Serang DIAAA")
+                println("2. KABURRR LARIII")
+                print("Pilih aksi: ")
+
+                val aksi = scanner.nextInt()
+                scanner.nextLine()
+
+                if (aksi == 1) {
+                    hero.attack("Goblin")
+                    enemyHp -= hero.int
+
+                    if (enemyHp<0) enemyHp = 0
+
+                    println("Sisa HP Musuh: $enemyHp")
+
+                    if (enemyHp > 0) {
+                        val enemyDamage = (10..20).random()
+                        println("Musuh membalas dengan damage $enemyDamage!")
+                        hero.takeDamage(enemyDamage)
+                        println("Sisa HP Hero: ${hero.hp}")
+                }
+            } else if (aksi == 2) {
+                println("Hero kabur...")
+                    break
+            } else {
+                println("Pilihan tidak valid bang...")
+                }
+            }
+            println("\n=== HASIL AKHIR PERTEMPURAN SENGIT ${heroName} VS Goblin ===")
+            if (enemyHp == 0) {
+                println("${heroName} The Hero Menang!!!") // Himmel the hero won
+            } else if (!hero.isAlive()) {
+                 println("Hero mati...") // damn... skill issue?
+            } else{
+                println("$heroName berhasil kabur!")
+                println("Dasar penakut!")
+            }
         }
         else -> {
             println("Menu tidak valid")
         }
     }
-
 }
