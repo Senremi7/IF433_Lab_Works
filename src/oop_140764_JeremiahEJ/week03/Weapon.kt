@@ -7,7 +7,7 @@ class Weapon(
     var damage: Int = damage
         set(value) {
             if (value < 0){
-                println("ERROR: Damage tidak boleh negatif! Di-set ke 0.")
+                println("ERROR: Damage tidak boleh negatif! Value masih sama")
                 field = value
             } else if (value > 1000) {
                 println("Damage terlalu overpowered woi! Capped at 1000.")
