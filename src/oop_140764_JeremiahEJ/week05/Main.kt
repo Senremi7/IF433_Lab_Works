@@ -50,11 +50,16 @@ fun main() {
         3 -> {
             println("=== Credit Card System ===")
             val ewallet = EWallet("Jeremiah", 50000.0)
-            val credit = CreditCard("Jeremiah", 100000.0)
+            val credit = CreditCard("Senora", 100000.0)
 
             val method: List<PaymentMethod> = listOf(ewallet, credit)
 
             for (payment in method) {
+                //payment.processPayment(75000.0)
+
+                if (payment is EWallet) {
+                    payment.topUp(50000.0)
+                }
                 payment.processPayment(75000.0)
             }
         }
