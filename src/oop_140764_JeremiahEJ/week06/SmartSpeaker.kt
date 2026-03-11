@@ -5,10 +5,10 @@ class SmartSpeaker(
     override val name: String
 ) : SmartDevice, Switchable {
     override fun turnOn(){
-        println("Lampu '$name' dengan id '$id' menyala.")
+        println("Speaker '$name' dengan id '$id' menyala.")
     }
     override fun turnOff(){
-        println("Lampu '$name' dengan id '$id' mati.")
+        println("Speaker '$name' dengan id '$id' mati.")
     }
     fun playMusic(song: String) {
         println("Memutar lagu $song dari Spotify.")
