@@ -36,4 +36,8 @@ fun main(){
         ApiResponse.Loading -> "Tampilkan spinner"
     }
     println("UI Message: $uiMessage")
+
+    println("\n=== Test GameManager ===")
+    GameManager.startGame()
+    GameManager.startGame()
 }
