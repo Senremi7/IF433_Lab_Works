@@ -42,4 +42,15 @@ fun main(){
     GameManager.startGame()
 
     println("Drop chance Legendary: ${ItemRarity.LEGENDARY.dropChance}%")
+
+    val upgradeItem = Weapon.forgeStarterSword().item.copy(damage = 25)
+
+    println("\n=== Process Event ===")
+    println(upgradeItem)
+    processEvent(BattleState.SafeZone)
+    processEvent(BattleState.MonsterEncounter("Rendy"))
+    processEvent(BattleState.LootDropped(upgradeItem))
+    processEvent(BattleState.GameOver("Kepleset jurang"))
+
+    println("Loot Dropped Daamage: " + upgradeItem.damage )
 }
