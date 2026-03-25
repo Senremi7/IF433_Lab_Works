@@ -1,6 +1,6 @@
 package oop_140764_JeremiahEJ.week07
 
-enum class ItemRarity {
+enum class ItemRarity(val dropChance: Int) {
     COMMON(45),
     UNCOMMON(30),
     RARE(19),
