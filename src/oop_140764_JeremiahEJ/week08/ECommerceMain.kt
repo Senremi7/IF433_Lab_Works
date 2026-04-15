@@ -14,7 +14,8 @@ fun main() {
         try {
             val product = parser.parseProduct(rawData)
             product?.let {
-                product -> parser.checkout(product)
+                println("Parsed: $it")
+                parser.checkout(it)
             } ?: println("Parsing gagal: Tipe produk tidak dikenali.")
         } catch (e: IllegalArgumentException) {
             println("Error msg: ${e.message}")
