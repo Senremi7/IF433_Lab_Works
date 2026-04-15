@@ -24,4 +24,14 @@ class ApiParser {
             else -> null
         }
     }
+
+    fun checkout(product: Product){
+        val id: String = when (product){
+            is Product.Electronic -> product.id
+            is Product.Clothing -> product.id
+        }
+
+        val hasil = JavaPaymentService.processPayment(id)!!
+        println("Hasil: $hasil")
+    }
 }
