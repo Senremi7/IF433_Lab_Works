@@ -7,7 +7,8 @@ fun main(){
         TradeLog("BTCUSD", "LONG", 20, 25.0, "OPEN"),
         TradeLog("USDJPY", "SHORT", 15, -12.3, "CLOSED"),
         TradeLog("BBCA", "LONG", 3, 3.2, "OPEN"),
-        TradeLog("ETHUSDT", "LONG", 13, 15.0, "CLOSED")
+        TradeLog("ETHUSDT", "LONG", 13, 15.0, "CLOSED"),
+        TradeLog("XAGUSD", "SHORT", 8, 5.0, "CLOSED")
     )
 
     println("All Closed Trades:")
@@ -43,4 +44,13 @@ fun main(){
         println()
     }
     println("------------------------------")
+
+    val topPerformersString = winningTrades
+        .sortedByDescending { it.roe }
+        .map { "WIN [${it.pair} - ${it.position}]: +${it.roe}% ROE (Lev: ${it.leverage}x)" }
+
+    println("Top Performing Closed Trades:")
+    for (trade in topPerformersString) {
+        println(trade)
+    }
 }
