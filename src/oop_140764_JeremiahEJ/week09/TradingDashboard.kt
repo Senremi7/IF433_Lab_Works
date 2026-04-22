@@ -17,17 +17,30 @@ fun main(){
                 "Position: ${trade.position}\n" +
                 "Leverage: ${trade.leverage}\n" +
                 "ROE: ${trade.roe}")
-        print("\n")
-        // Biar rapih, gabut
+        println()
+        // Biar rapih & hasil, gabut
     }
+    println("------------------------------")
 
-    print("\nAll Closed Profit Trades:")
+    println("\nAll Closed Profit Trades:")
     val winningTrades = closedTrades.filter { it.roe > 0 }
     for (trade in winningTrades) {
         println("Pair: ${trade.pair}\n" +
                 "Position: ${trade.position}\n" +
                 "Leverage: ${trade.leverage}\n" +
                 "ROE: ${trade.roe}")
-        print("\n")
+        println()
     }
+    println("------------------------------")
+
+    println("\nAll Closed Loss Trades:")
+    val losingTrades = closedTrades.filter { it.roe <= 0 }
+    for (trade in losingTrades) {
+        println("Pair: ${trade.pair}\n" +
+                "Position: ${trade.position}\n" +
+                "Leverage: ${trade.leverage}\n" +
+                "ROE: ${trade.roe}")
+        println()
+    }
+    println("------------------------------")
 }
