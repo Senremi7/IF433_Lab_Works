@@ -19,7 +19,6 @@ fun main(){
                 "Leverage: ${trade.leverage}\n" +
                 "ROE: ${trade.roe}")
         println()
-        // Biar rapih & hasil, gabut
     }
     println("------------------------------")
 
@@ -74,9 +73,11 @@ fun main(){
     println("=== CRYPTO TRADING DASHBOARD ===")
     println("Top Performers: ")
     topPerformersString.forEach { println(it) }
+    println()
 
     println("Worst Performers: ")
     worstPerformersString.forEach { println(it) }
+    println()
 
     println("Unique Trading Pairs: ")
     uniquePairs.forEach { println(it) }
