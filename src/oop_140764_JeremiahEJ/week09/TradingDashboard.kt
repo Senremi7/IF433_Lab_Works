@@ -7,6 +7,27 @@ fun main(){
         TradeLog("BTCUSD", "LONG", 20, 25.0, "OPEN"),
         TradeLog("USDJPY", "SHORT", 15, -12.3, "CLOSED"),
         TradeLog("BBCA", "LONG", 3, 3.2, "OPEN"),
-        TradeLog("ETHUSDT", "LONG", 13, 15.0, "OPEN")
+        TradeLog("ETHUSDT", "LONG", 13, 15.0, "CLOSED")
     )
+
+    println("All Closed Trades:")
+    val closedTrades = tradeHistory.filter { it.Status == "CLOSED" }
+    for (trade in closedTrades) {
+        println("Pair: ${trade.pair}\n" +
+                "Position: ${trade.position}\n" +
+                "Leverage: ${trade.leverage}\n" +
+                "ROE: ${trade.roe}")
+        print("\n")
+        // Biar rapih, gabut
+    }
+
+    print("\nAll Closed Profit Trades:")
+    val winningTrades = closedTrades.filter { it.roe > 0 }
+    for (trade in winningTrades) {
+        println("Pair: ${trade.pair}\n" +
+                "Position: ${trade.position}\n" +
+                "Leverage: ${trade.leverage}\n" +
+                "ROE: ${trade.roe}")
+        print("\n")
+    }
 }
