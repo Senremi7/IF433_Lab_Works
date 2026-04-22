@@ -70,4 +70,8 @@ fun main(){
     for (pair in uniquePairs) {
         println(pair)
     }
+
+    println("=== CRYPTO TRADING DASHBOARD ===")
+    println("Top Performers: ")
+    topPerformersString.forEach { println(it) }
 }
