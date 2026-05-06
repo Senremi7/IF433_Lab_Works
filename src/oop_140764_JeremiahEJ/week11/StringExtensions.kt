@@ -9,3 +9,8 @@ fun String.addGreeting(): String{
 fun String.repeatTimes(n:Int): String{
      return this.repeat(n)
 }
+
+fun String?.isNullOrEmpty(): Boolean{
+    // "this" bs bernilai null
+    return this == null || this.isEmpty()
+}
