@@ -6,3 +6,10 @@ data class SmartDevice(
     var isOnline: Boolean = false,
     var powerLoad: Int = 0
 )
+
+fun SmartDevice.diagnose(): String{
+    return "[DIAGNOSTIK] $name |" +
+            " Kategori:\n" +
+            "category | Status: ${if (isOnline) "Online" else "Offline"} |\n" +
+            "Daya: $powerLoad Watt"
+}
