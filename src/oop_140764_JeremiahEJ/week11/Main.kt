@@ -7,4 +7,4 @@ fun main (){
 
     val text: String? = null
     println("Apakah null/empty? ${text.isNullOrEmpty()}")
-}gi
+}
