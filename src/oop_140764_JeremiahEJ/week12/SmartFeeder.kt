@@ -38,6 +38,7 @@ fun main(){
 
     runCatching {
         dispenseKibble(30, 1000, false)
+//        dispenseKibble(30, 10, false)
     }.onSuccess { newStock ->
         currentKibbleStock = newStock
         println("Makan sore sukses! Sisa stok kibble: $currentKibbleStock gr")

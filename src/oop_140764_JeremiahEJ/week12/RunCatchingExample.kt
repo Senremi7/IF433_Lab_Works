@@ -7,7 +7,7 @@ fun main(){
     }
 
     val safeValue = result.getOrElse { -1 }
-    println("Saffe Value (getOrElse): $safeValue")
+    println("Safe Value (getOrElse): $safeValue")
 
     val recovered = result.recover { 0 }.getOrNull()
     println("Recovered Value: $recovered")
