@@ -31,8 +31,12 @@ fun main(){
     } catch (e: FoodEmptyException) {
         println(e.message)
     } catch (e: Exception) {
-        println("General Error: ${e.message}")
+        println("General Error (Palingan bug): ${e.message}")
     } finally {
         println("Siklus pengecekan dispenser pagi selesai.")
+    }
+
+    runCatching {
+        dispenseKibble(30, 1000, false)
     }
 }
