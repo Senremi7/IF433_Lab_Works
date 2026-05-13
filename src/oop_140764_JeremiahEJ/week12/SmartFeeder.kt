@@ -32,5 +32,7 @@ fun main(){
         println(e.message)
     } catch (e: Exception) {
         println("General Error: ${e.message}")
+    } finally {
+        println("Siklus pengecekan dispenser pagi selesai.")
     }
 }
