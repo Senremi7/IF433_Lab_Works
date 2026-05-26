@@ -32,3 +32,13 @@ fun saveTrades(trades: List<TradeRecord>, path: String){
         trades.forEach {out.println(it.toCsv())}
     }
 }
+
+fun loadTrades(path: String): List<TradeRecord>{
+    return try {
+        File(path).readLines().mapNotNull {
+            fromCsvTrade(it)
+        }
+    } catch (e: FileNotFoundException){
+        return emptyList()
+    }
+}
