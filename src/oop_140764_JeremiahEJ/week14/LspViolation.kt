@@ -1,8 +1,8 @@
 package oop_140764_JeremiahEJ.week14
 
 open class Rectangle{
-    open val width: Int = 0
-    open val height: Int = 0
+    open var width: Int = 0
+    open var height: Int = 0
     fun area() = width * height
 }
 
