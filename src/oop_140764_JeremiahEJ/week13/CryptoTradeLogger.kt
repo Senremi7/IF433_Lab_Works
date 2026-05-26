@@ -52,6 +52,18 @@ fun main(){
     saveTrades(trades, "crypto_trades.csv")
 
     File("crypto_trades.csv").appendText("CORRUPT_ID,DOGEUSDT,Hold,XX,YY\n")
+
     val loadedData = loadTrades("crypto_trades.csv")
-    println("Total PnL dari history minggu lalu: ${loadedData.sumOf { it.pnl }}")
+    println("Total PnL dari history minggu lalu: ${loadedData.sumOf { it.pnl }}\n")
+
+    var totalPnl = 0
+    loadedData.forEach { trade ->
+        println("Trade ID: ${trade.id}, " +
+                "Symbol: ${trade.symbol}, " +
+                "Type: ${trade.type}, " +
+                "Margin: ${trade.margin}, " +
+                "PnL: ${trade.pnl}")
+        totalPnl += trade.pnl.toInt()
+    }
+    println("==== TOTAL Pnl BERSIH: $totalPnl ====")
 }
